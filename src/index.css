@@ -1,0 +1,88 @@
+/* Reset CSS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+}
+
+/* Remove default padding */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Remove default outline styles */
+a,
+button,
+input,
+textarea,
+select {
+  outline: none;
+}
+
+/* Reset form elements */
+button,
+input,
+optgroup,
+textarea {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  appearance: none;
+}
+
+/* Remove default button styles */
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Remove default background and border styles on input[type="text"] */
+input[type="text"] {
+  border: none;
+}
+
+/* Remove default background and border styles on textarea */
+textarea {
+  background-color: transparent;
+  border: none;
+}
+
+/* Remove default horizontal scrollbar in webkit browsers */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Reset CSS ends */

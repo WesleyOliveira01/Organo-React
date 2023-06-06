@@ -1,0 +1,21 @@
+.card{
+    text-align: center;
+    background-color: #00C86F26;
+    padding: 32px;
+}
+
+.card h3{
+    font-family: 'Prata', serif;
+    font-size: 32px;
+    font-weight: 400;
+    border-bottom: 3px solid #57c278;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.colaboradores{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}

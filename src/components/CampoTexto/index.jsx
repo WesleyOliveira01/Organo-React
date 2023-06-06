@@ -1,0 +1,24 @@
+import { useState } from "react";
+import "./style.css";
+
+const CampoDeTexto = ({ nome, valor, placeholder, obrigatorio,valInput,setValInput}) => {
+  const handleInput = (e) => {
+    setValInput(e.target.value);
+  };
+  return (
+    <div className="campo__texto">
+      <label htmlFor={valor}>{nome}</label>
+      <input
+        required={obrigatorio}
+        type="text"
+        name={valor}
+        id={valor}
+        placeholder={placeholder}
+        value={valInput}
+        onChange={handleInput}
+      />
+    </div>
+  );
+};
+
+export default CampoDeTexto;
