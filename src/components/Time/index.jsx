@@ -1,7 +1,7 @@
 import Card from "../Card";
 import "./style.css";
 
-const Time = ({ nome, corPrimaria, corSecundaria,colaboradores }) => { 
+const Time = ({ nome, corPrimaria, corSecundaria,colaboradores,aoDeletar }) => { 
     const bgPrimario = {borderColor:corPrimaria};
     const bgSecundario = {backgroundColor:corSecundaria}
   return (
@@ -10,7 +10,7 @@ const Time = ({ nome, corPrimaria, corSecundaria,colaboradores }) => {
 
       <div className="colaboradores">
         {colaboradores.map((colaborador,i)=>{
-          return <Card key={i} nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} corDeFundo={corPrimaria} />;
+          return <Card key={i} nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem} corDeFundo={corPrimaria} aoDeletar={aoDeletar} />;
         })}
       </div>
       
