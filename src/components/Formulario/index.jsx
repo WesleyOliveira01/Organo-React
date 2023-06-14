@@ -6,12 +6,14 @@ import CampoDeTexto from "../CampoTexto/index";
 import "./style.css";
 import ListaSuspensa from "../ListaSuspensa/index";
 import Botao from "../Botao/index";
-const Formulario = ({ criaColaborador, colaboradores,times }) => {
-  
+
+const Formulario = ({ criaColaborador, colaboradores, times, criarTime }) => {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
+  const [novoTime, setNovoTime] = useState("");
+  const [cor, setCor] = useState("#000");
 
   const aoEnviar = (e) => {
     e.preventDefault();
@@ -26,12 +28,20 @@ const Formulario = ({ criaColaborador, colaboradores,times }) => {
         time,
       },
     ]);
+
     setNome("");
     setCargo("");
     setImagem("");
     setTime("");
+  };
 
-    
+  const aoCriarTime = (e) => {
+    e.preventDefault();
+
+    criarTime({ id: id(), nome: novoTime, cor });
+
+    setNovoTime("");
+    setCor("#000");
   };
   return (
     <section className="formulario">
@@ -69,6 +79,25 @@ const Formulario = ({ criaColaborador, colaboradores,times }) => {
           setTime={setTime}
         />
         <Botao>Criar card</Botao>
+      </form>
+      <form action="#" onSubmit={aoCriarTime}>
+        <h2>Preencha os dados para criar o novo time.</h2>
+        <CampoDeTexto
+          obrigatorio={true}
+          nome="Time"
+          valor="Time"
+          placeholder="Digite o nome do time"
+          valInput={novoTime}
+          setValInput={setNovoTime}
+        />
+        <CampoDeTexto
+          tipo="color"
+          nome="Cor"
+          valInput={cor}
+          setValInput={setCor}
+        />
+
+        <Botao>Criar time</Botao>
       </form>
     </section>
   );

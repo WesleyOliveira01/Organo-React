@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./style.css";
 
-const CampoDeTexto = ({ nome, valor, placeholder, obrigatorio,valInput,setValInput}) => {
+const CampoDeTexto = ({ nome, valor, placeholder, obrigatorio,valInput,setValInput,tipo}) => {
   const handleInput = (e) => {
     setValInput(e.target.value);
   };
@@ -10,7 +10,7 @@ const CampoDeTexto = ({ nome, valor, placeholder, obrigatorio,valInput,setValInp
       <label htmlFor={valor}>{nome}</label>
       <input
         required={obrigatorio}
-        type="text"
+        type={tipo}
         name={valor}
         id={valor}
         placeholder={placeholder}

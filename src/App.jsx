@@ -44,11 +44,13 @@ const App = () => {
   ]);
   const [colaboradores, setColaboradores] = useState([]);
   const aoDeletar = (id) => {
-    setColaboradores(colaboradores.filter(colaborador =>{
-      if(colaborador.id != id){
-        return colaborador
-      }
-    } ))
+    setColaboradores(
+      colaboradores.filter((colaborador) => {
+        if (colaborador.id != id) {
+          return colaborador;
+        }
+      })
+    );
   };
 
   const mudarCorDoTime = (cor, id) => {
@@ -61,12 +63,19 @@ const App = () => {
       })
     );
   };
+
+  const criaTime = (novoTime) => {
+    setTimes([...times, novoTime]);
+  };
+  console.log(times);
   return (
     <>
       <Banner />
       <Formulario
         colaboradores={colaboradores}
         criaColaborador={setColaboradores}
+        criarTime={criaTime}
+        listaTimes={times}
         times={times.map((time) => time.nome)}
       />
       {times.map((time) => (

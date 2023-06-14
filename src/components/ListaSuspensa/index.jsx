@@ -2,7 +2,7 @@ import { useState } from "react";
 // CSS
 import "./style.css";
 
-const ListaSuspensa = ({ label, item, obrigatorio, time, setTime }) => {
+const ListaSuspensa = ({ label, item, obrigatorio, time, setTime}) => {
   const handleTime = (e) => {
     setTime(e.target.value);
   };
@@ -17,8 +17,8 @@ const ListaSuspensa = ({ label, item, obrigatorio, time, setTime }) => {
         required={obrigatorio}
       >
         <option value=""></option>
-        {item.map((item) => (
-          <option key={item}>{item}</option>
+        {item.map((item,i) => (
+          <option key={i}>{item}</option>
         ))}
       </select>
     </section>
