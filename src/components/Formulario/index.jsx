@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as id } from "uuid";
 // components
 import CampoDeTexto from "../CampoTexto/index";
 // CSS
@@ -18,6 +19,7 @@ const Formulario = ({ criaColaborador, colaboradores,times }) => {
     criaColaborador([
       ...colaboradores,
       {
+        id: id(),
         nome,
         cargo,
         imagem,
@@ -28,6 +30,8 @@ const Formulario = ({ criaColaborador, colaboradores,times }) => {
     setCargo("");
     setImagem("");
     setTime("");
+
+    
   };
   return (
     <section className="formulario">
